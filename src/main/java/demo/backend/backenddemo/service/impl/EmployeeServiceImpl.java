@@ -5,6 +5,8 @@ import demo.backend.backenddemo.repository.EmployeeRepository;
 import demo.backend.backenddemo.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 //This class implements the employee service interface
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -18,5 +20,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
     }
 }
